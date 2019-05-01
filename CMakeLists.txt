@@ -519,12 +519,6 @@ if (NOT LIBCXXABI_INCLUDE_TESTS OR (LIBCXXABI_STANDALONE_BUILD AND NOT LIBCXXABI
   # We either need to be able to replace libc++abi at run time (with a shared
   # libc++abi), or we need to be able to replace the C++ runtime (with a non-
   # standalone build).
-  message(WARNING "The libc++abi tests aren't valid when libc++abi is built "
-                  "standalone (i.e. outside of llvm/projects/libcxxabi ) and "
-                  "is built without a shared library.  Either build a shared "
-                  "library, build libc++abi at the same time as you build "
-                  "libc++, or do without testing.  No check target will be "
-                  "available!")
 else()
   add_subdirectory(test)
   add_subdirectory(fuzz)
